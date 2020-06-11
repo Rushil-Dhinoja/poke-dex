@@ -91,6 +91,7 @@ export const getPokemon = (name) => async (dispatch) => {
             level2,
             level3,
         };
+        console.log(evolutionData);
 
         const payload = {
             data: res.data,
