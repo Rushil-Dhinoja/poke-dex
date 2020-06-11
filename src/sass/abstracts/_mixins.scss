@@ -1,0 +1,47 @@
+@mixin backgroundColor($color) {
+    background: $color;
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == micro {
+        @media only screen and (max-width: $micro) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == smallest {
+        @media only screen and (max-width: $smallest) {
+            @content;
+        }
+    }
+    @if $breakpoint == smaller {
+        @media only screen and (max-width: $smaller) {
+            @content;
+        }
+    }
+    @if $breakpoint == small {
+        @media only screen and (max-width: $small) {
+            @content;
+        }
+    }
+    @if $breakpoint == medium {
+        @media only screen and (max-width: $medium) {
+            @content;
+        }
+    }
+    @if $breakpoint == large {
+        @media only screen and (max-width: $large) {
+            @content;
+        }
+    }
+    @if $breakpoint == larger {
+        @media only screen and (max-width: $larger) {
+            @content;
+        }
+    }
+    @if $breakpoint == largest {
+        @media only screen and (max-width: $largest) {
+            @content;
+        }
+    }
+}

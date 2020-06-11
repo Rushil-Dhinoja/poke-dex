@@ -1,0 +1,43 @@
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20rem;
+    &__img {
+        height: 200px;
+    }
+    &__msg {
+        margin-left: 2rem;
+        h1 {
+            font-size: 3rem;
+            border-bottom: 1px solid $complement-color-1;
+            padding: 1rem;
+            font-family: 'roboto', 'sans-serif';
+            font-weight: 700;
+        }
+
+        p {
+            font-family: 'open-sans', 'sans-serif';
+            font-weight: 400;
+            font-size: 2rem;
+            padding: 1rem;
+        }
+
+        button {
+            margin: 1rem;
+            padding: 1rem 2rem;
+            background-color: $complement-color-1;
+            color: $white;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+                transform: translateY(-2px) scale(0.9);
+            }
+        }
+    }
+}

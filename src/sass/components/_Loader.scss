@@ -1,0 +1,66 @@
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+
+    @include respond(large) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__img {
+        width: 30px;
+        animation: ballanime;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        backface-visibility: hidden;
+    }
+
+    &__shadow {
+        margin: 0 auto 0 auto;
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 30px;
+        background-color: $font-color;
+        height: 2px;
+        border-radius: 50%;
+        animation: shadow;
+        text-align: center;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        backface-visibility: hidden;
+    }
+}
+
+@keyframes ballanime {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    90% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes shadow {
+    0% {
+        width: 30px;
+    }
+    50% {
+        width: 25px;
+    }
+    90% {
+        width: 32px;
+    }
+    100% {
+        width: 30px;
+    }
+}

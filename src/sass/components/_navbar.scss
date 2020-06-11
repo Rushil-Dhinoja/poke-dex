@@ -1,0 +1,53 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, rgba($white, 0.5), rgba($white, 0.5)) rgba($secondary, 1);
+    height: 50px;
+    display: none;
+
+    @include respond(large) {
+        display: flex;
+        align-items: center;
+        z-index: 50;
+    }
+    &__btn {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        margin: 1rem 0 1rem 2rem;
+        height: 25px;
+        cursor: pointer;
+        outline: 0;
+
+        &__hamburger {
+            position: relative;
+            width: 30px;
+            height: 5px;
+            background-color: $primary;
+            border-radius: 50px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 10px;
+                left: 0;
+                width: 30px;
+                height: 5px;
+                background-color: $primary;
+                border-radius: 50px;
+            }
+
+            &::after {
+                content: '';
+                left: 0;
+                position: absolute;
+                top: -10px;
+                width: 30px;
+                height: 5px;
+                background-color: $primary;
+                border-radius: 50px;
+            }
+        }
+    }
+}

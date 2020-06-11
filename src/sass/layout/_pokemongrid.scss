@@ -1,0 +1,96 @@
+.pokemon__grid {
+    padding: 3rem;
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    z-index: -1;
+
+    @include respond(large) {
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    @include respond(medium) {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 3rem;
+        gap: 2rem;
+    }
+
+    @include respond(small) {
+        padding: 1rem;
+        gap: 2rem 1.5rem;
+    }
+    @include respond(smaller) {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    &__cell {
+        border-radius: 20px;
+        font-size: 2rem;
+        box-shadow: 0 5px 10px rgba($black, $alpha: 0.3);
+        transition: all 0.2s;
+        z-index: 1;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &__link {
+            font-family: 'open-sans', 'sans-serif';
+            font-weight: 600;
+            display: flex;
+            padding: 1rem;
+            align-items: center;
+            text-decoration: none;
+            color: $white;
+            z-index: -1;
+
+            @include respond(micro) {
+                padding: 0;
+            }
+
+            &__img {
+                height: 96px;
+                width: 96px;
+
+                @include respond(larger) {
+                    height: 80px;
+                    width: 80px;
+                }
+                @include respond(small) {
+                    height: 60px;
+                    width: 60px;
+                }
+                @include respond(smaller) {
+                    height: 80px;
+                    width: 80px;
+                }
+                @include respond(micro) {
+                    height: 70px;
+                    width: 70px;
+                }
+            }
+
+            &__name {
+                font-size: 2.5rem;
+                letter-spacing: 10%;
+                text-transform: uppercase;
+
+                @include respond(medium) {
+                    font-size: 2.5rem;
+                    margin-left: 10px;
+                }
+                @include respond(medium) {
+                    font-size: 2.2rem;
+                }
+                @include respond(smaller) {
+                    font-size: 2.5rem;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

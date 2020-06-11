@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(large) {
+        font-size: 56.25%;
+    }
+
+    @include respond(medium) {
+        font-size: 50%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+        appearance: none;
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 4px solid $white;
+        background-color: rgba($complement-color-1, $alpha: 1);
+    }
+}

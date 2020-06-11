@@ -1,0 +1,12 @@
+.container {
+    margin: 9rem 3rem 5vh calc(20% + 5rem);
+    @include respond(large) {
+        margin: 9rem 1rem 5vh 1rem;
+    }
+
+    &__pokemon {
+        @include respond(large) {
+            padding: 2.5rem;
+        }
+    }
+}

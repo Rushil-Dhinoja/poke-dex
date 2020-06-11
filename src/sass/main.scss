@@ -1,0 +1,21 @@
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+@import 'components/sidebar';
+@import 'components/searchbar';
+@import 'components/loader';
+@import 'components/buttons';
+@import 'components/navbar';
+@import 'components/pokemonheader';
+@import 'components/pokemonabout';
+@import 'components/pokemonmanda';
+@import 'components/evolutionchain';
+
+@import 'layout/container';
+@import 'layout/pokemongrid';
+@import 'layout/error';
+@import 'layout/pokemon';

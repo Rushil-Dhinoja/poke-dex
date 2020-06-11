@@ -1,0 +1,125 @@
+.searchbar {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+
+    @include respond(large) {
+        position: relative;
+        top: 7rem;
+        right: 0;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    @include respond(medium) {
+        top: 9rem;
+    }
+    @include respond(small) {
+        top: 8rem;
+    }
+
+    &__form {
+        position: relative;
+        z-index: 5;
+
+        @include respond(medium) {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        &__svg {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            top: 0.8rem;
+            left: 1rem;
+            fill: rgba($white, $alpha: 0.8);
+            display: block;
+
+            @include respond(medium) {
+                left: 1rem;
+                right: 1rem;
+            }
+        }
+
+        &__input {
+            border: none;
+            background-color: $primary;
+            padding: 1rem 3.5rem;
+            border-radius: 30px;
+            color: $white;
+            outline: none;
+            width: 200px;
+            box-shadow: 0 0 15px rgba($complement-color-1, $alpha: 0.4);
+            backface-visibility: hidden;
+
+            @include respond(large) {
+                margin: 0 auto;
+                font-size: 1.5rem;
+            }
+            @include respond(medium) {
+                width: 100%;
+                font-size: 2rem;
+                padding-left: 4rem;
+                margin: 0 auto;
+            }
+
+            &::placeholder {
+                color: rgba($white, $alpha: 1);
+                font-family: 'roboto', 'sans-serif';
+                font-weight: 300;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    &__suggestion {
+        max-height: 200px;
+        box-shadow: 0 0 10px rgba($black, 0.5);
+        overflow-y: scroll;
+        width: 96%;
+        margin-top: -20px;
+        align-self: center;
+        padding-top: 20px;
+        border-radius: 10px;
+        z-index: 2;
+
+        @include respond(large) {
+            top: 4rem;
+            position: absolute;
+            width: 250px;
+        }
+        @include respond(medium) {
+            width: 85%;
+        }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: rgba($complement-color-1, $alpha: 1);
+            margin: 3px;
+        }
+
+        &__item {
+            padding: 1rem;
+            font-size: 1.4rem;
+            text-transform: capitalize;
+            background-color: $white;
+            &:hover {
+                background-color: $off-white;
+            }
+
+            @include respond(large) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

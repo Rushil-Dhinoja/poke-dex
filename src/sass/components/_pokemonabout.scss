@@ -1,0 +1,247 @@
+.pokemon-about {
+    margin-top: 2rem;
+    display: flex;
+    color: $font-color;
+    width: 100%;
+
+    @include respond(medium) {
+        flex-direction: column;
+    }
+
+    &__bio {
+        width: 70%;
+        box-shadow: 0 0 5px rgba($font-color, 0.4);
+        border-radius: 10px;
+        padding: 1rem;
+
+        @include respond(medium) {
+            width: 100%;
+            padding: 0;
+        }
+
+        &__heading {
+            font-size: 4rem;
+            font-family: 'roboto', 'sans-serif';
+            font-weight: 300;
+            text-transform: uppercase;
+            @include respond(medium) {
+                padding: 1rem;
+            }
+        }
+        &__generation {
+            font-size: 1.5rem;
+            font-family: 'roboto', 'sans-serif';
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 1rem 0;
+            @include respond(medium) {
+                padding: 1rem;
+            }
+        }
+
+        &__text {
+            font-size: 2rem;
+            font-family: 'open-sans', 'sans-serif';
+            font-weight: 400;
+            @include respond(medium) {
+                padding: 1rem;
+            }
+        }
+    }
+
+    &__info {
+        width: 30%;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        @include respond(medium) {
+            margin-left: 0;
+            margin-top: 1rem;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        &__breeding {
+            height: 50%;
+            margin-bottom: 0.5rem;
+            border-radius: 10px;
+            padding: 0.5rem;
+            box-shadow: 0 0 5px rgba($font-color, 0.4);
+
+            @include respond(medium) {
+                width: 50%;
+                margin-right: 0.5rem;
+                margin-bottom: 0;
+            }
+
+            h2 {
+                padding: 1rem;
+                font-family: 'roboto', 'sans-serif';
+                font-weight: 700;
+                @include respond(micro) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            &__infos {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 1rem;
+                font-size: 1.5rem;
+                @include respond(medium) {
+                    grid-template-columns: repeat(2, 1fr);
+                    font-size: 1.2rem;
+                }
+                @include respond(small) {
+                    grid-template-columns: 1fr;
+                    font-size: 1.2rem;
+                }
+
+                &__info {
+                    display: flex;
+                    flex-direction: column;
+
+                    &__key {
+                        font-size: 1.2rem;
+                        font-family: 'roboto', 'sans-serif';
+                        font-weight: 700;
+                        color: rgba($font-color, 0.8);
+                    }
+
+                    &__value {
+                        font-family: 'roboto', 'sans-serif';
+                        font-weight: 300;
+                        text-transform: capitalize;
+                        margin-top: 0.3rem;
+                        font-size: 1.8rem;
+                        div {
+                            display: flex;
+                            justify-content: space-between;
+
+                            @include respond(medium) {
+                                justify-content: flex-start;
+                            }
+
+                            div {
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                width: 50%;
+
+                                @include respond(medium) {
+                                    justify-content: flex-start;
+                                    width: 30%;
+                                }
+                                @include respond(small) {
+                                    width: 50%;
+                                }
+
+                                span {
+                                    font-size: 1.4rem;
+                                    color: $font-color;
+
+                                    @include respond(small) {
+                                        font-size: 1.8rem;
+                                    }
+                                }
+                                svg {
+                                    height: 12px;
+                                    width: 12px;
+                                    margin-right: 0.5rem;
+
+                                    @include respond(small) {
+                                        height: 10px;
+                                        width: 10px;
+                                        margin-right: 0.5rem;
+                                    }
+                                }
+
+                                &:not(:first-child) {
+                                    margin-left: 0.5rem;
+                                }
+                            }
+                        }
+
+                        span {
+                            color: rgba($font-color, 0.6);
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__capture {
+            margin-top: 0.5rem;
+            height: 100%;
+            border-radius: 10px;
+            padding: 0.5rem;
+            box-shadow: 0 0 5px rgba($font-color, 0.4);
+
+            @include respond(medium) {
+                width: 50%;
+                margin-left: 0.5rem;
+                margin-top: 0;
+            }
+
+            h2 {
+                padding: 1rem;
+                font-family: 'roboto', 'sans-serif';
+                font-weight: 700;
+
+                @include respond(micro) {
+                    font-size: 1.2rem;
+                    padding: 1rem 0.5rem;
+                }
+            }
+
+            &__infos {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                font-size: 1.5rem;
+                padding: 1rem;
+                @include respond(medium) {
+                    grid-template-columns: repeat(2, 1fr);
+                    font-size: 1.2rem;
+                }
+                @include respond(small) {
+                    grid-template-columns: 1fr;
+                    font-size: 1.2rem;
+                }
+
+                &__info {
+                    display: flex;
+                    flex-direction: column;
+                    &__key {
+                        font-size: 1.2rem;
+                        font-family: 'roboto', 'sans-serif';
+                        font-weight: 700;
+                        color: rgba($font-color, 0.8);
+                    }
+
+                    &__value {
+                        font-family: 'roboto', 'sans-serif';
+                        font-weight: 300;
+                        text-transform: capitalize;
+                        margin-top: 0.3rem;
+                        font-size: 1.8rem;
+                        div {
+                            display: flex;
+                            justify-content: space-between;
+
+                            p:not(:first-child) {
+                                margin-right: 2rem;
+                            }
+                        }
+                        span {
+                            color: rgba($font-color, 0.6);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

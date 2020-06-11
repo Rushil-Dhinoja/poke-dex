@@ -1,0 +1,211 @@
+.pokemon-info__header {
+    display: flex;
+    color: $font-color;
+    @include respond(small) {
+        flex-direction: column;
+    }
+
+    &__summary {
+        width: 33.33%;
+
+        @include respond(small) {
+            width: 100%;
+            order: 1;
+            margin-top: 2rem;
+        }
+
+        &__name {
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-family: 'roboto', 'sans-serif';
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+
+            @include respond(medium) {
+                font-size: 3rem;
+            }
+        }
+
+        &__types {
+            display: flex;
+
+            @include respond(small) {
+                margin-top: 1rem;
+            }
+
+            &__type {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                padding: 0.5rem 1rem;
+                width: 120px;
+
+                @include respond(medium) {
+                    width: 90px;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+
+                svg {
+                    height: 20px;
+                    width: 20px;
+                    padding: 0.5rem;
+                    @include respond(medium) {
+                        height: 15px;
+                        width: 15px;
+                    }
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    color: $white;
+                    text-transform: uppercase;
+                    font-family: 'roboto', 'snas-serif';
+                    font-weight: 400;
+                    @include respond(medium) {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+        &__base {
+            @include respond(small) {
+                display: flex;
+                width: 100%;
+                margin-top: 1rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__stat {
+                background-color: $white;
+                display: flex;
+                justify-content: space-around;
+                padding: 1.5rem;
+                margin: 1rem 1rem 1rem 0;
+                box-shadow: 0 0 5px rgba($font-color, 0.4);
+                border-radius: 10px;
+                font-size: 2rem;
+                font-family: 'roboto', 'sans-serif';
+                font-weight: 400;
+
+                @include respond(medium) {
+                    font-size: 2.5rem;
+                }
+                @include respond(small) {
+                    width: 50%;
+                }
+                @include respond(smaller) {
+                    font-size: 1.8rem;
+                }
+                @include respond(micro) {
+                    font-size: 1.6rem;
+                }
+
+                &-xp,
+                &-happiness {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    span {
+                        font-size: 1.2rem;
+                        color: rgba($font-color, $alpha: 0.6);
+                        text-transform: uppercase;
+
+                        @include respond(medium) {
+                            font-size: 1.4rem;
+                        }
+                        @include respond(smaller) {
+                            font-size: 1rem;
+                        }
+                        @include respond(micro) {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+
+            &__volume {
+                background-color: $white;
+                display: flex;
+                justify-content: space-around;
+                padding: 1.5rem;
+                margin: 1rem 1rem 1rem 0;
+                box-shadow: 0 0 5px rgba($font-color, 0.4);
+                border-radius: 10px;
+                font-size: 2rem;
+                font-family: 'roboto', 'sans-serif';
+                font-weight: 400;
+                @include respond(medium) {
+                    font-size: 2.5rem;
+                }
+                @include respond(small) {
+                    width: 50%;
+                    margin: 1rem 0 1rem 1rem;
+                }
+                @include respond(smaller) {
+                    font-size: 1.8rem;
+                }
+                @include respond(smaller) {
+                    font-size: 1.6rem;
+                }
+                &-height,
+                &-weight {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+
+                    span {
+                        font-size: 1.2rem;
+                        color: rgba($font-color, $alpha: 0.6);
+                        text-transform: uppercase;
+                        @include respond(medium) {
+                            font-size: 1.4rem;
+                        }
+                        @include respond(smaller) {
+                            font-size: 1rem;
+                        }
+                        @include respond(micro) {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__images {
+        width: 33.33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(small) {
+            width: 100%;
+        }
+
+        img {
+            width: 125px;
+            height: 125px;
+
+            @include respond(medium) {
+                height: 90px;
+                width: 90px;
+            }
+        }
+    }
+    &__stats {
+        width: 33.33%;
+
+        @include respond(small) {
+            width: 100%;
+            order: 2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+    }
+}
