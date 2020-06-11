@@ -3,11 +3,19 @@
     align-items: center;
     justify-content: center;
     margin-top: 20rem;
+
+    @include respond(smaller) {
+        flex-direction: column;
+    }
     &__img {
         height: 200px;
     }
     &__msg {
         margin-left: 2rem;
+        @include respond(smaller) {
+            margin: 1rem 2rem;
+        }
+
         h1 {
             font-size: 3rem;
             border-bottom: 1px solid $complement-color-1;

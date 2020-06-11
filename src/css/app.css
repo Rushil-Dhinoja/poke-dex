@@ -1166,10 +1166,16 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 20rem; }
+  @media only screen and (max-width: 31.25em) {
+    .error-container {
+      flex-direction: column; } }
   .error-container__img {
     height: 200px; }
   .error-container__msg {
     margin-left: 2rem; }
+    @media only screen and (max-width: 31.25em) {
+      .error-container__msg {
+        margin: 1rem 2rem; } }
     .error-container__msg h1 {
       font-size: 3rem;
       border-bottom: 1px solid #ff6d73;
