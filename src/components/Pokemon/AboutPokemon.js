@@ -1,23 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Texts from './Texts';
 
 const AboutPokemon = ({ pokemon: { species } }) => {
-    const text = species.flavor_text_entries
-        .splice(1, 5)
-        .map((text) => {
-            return text.language.name === 'en'
-                ? text.flavor_text.replace(/é/g, 'E').replace(/'/g, '').replace(/[^a-zA-Z]/g, ' ')
-                : '';
-        })
-        .join().replace(/ ,/g, '. ')
-    
-
     return (
         <div className='pokemon-about'>
             <div className='pokemon-about__bio'>
                 <h2 className='pokemon-about__bio__heading'>About</h2>
                 <h4 className='pokemon-about__bio__generation'>{species.generation.name}</h4>
-                <p className='pokemon-about__bio__text'>{text}</p>
+                <p className='pokemon-about__bio__text'>
+                    <Texts species={species} />
+                </p>
             </div>
             <div className='pokemon-about__info'>
                 <div className='pokemon-about__info__breeding'>

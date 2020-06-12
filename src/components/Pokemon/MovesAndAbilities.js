@@ -15,8 +15,10 @@ const MovesAndAbilities = ({ pokemon: { data } }) => {
             <div className='moves-and-abilities__moves'>
                 <h4>Moves</h4>
                 <div>
-                    {data.moves.splice(0, 12).map((move, index) => {
-                        return <p key={index}>{move.move.name}</p>;
+                    {data.moves.map((move, index) => {
+                        if (index <= 11) {
+                            return <p key={index}>{move.move.name}</p>;
+                        }
                     })}
                 </div>
             </div>

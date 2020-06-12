@@ -18,10 +18,10 @@
     align-items: center;
     justify-content: center;
     transform: translateX(-100%);
-    box-shadow: 1px 0 7px rgba(0, 0, 0, 0.5);
     transition: all 0.3s;
 
     &.open {
+        box-shadow: 1px 0 7px rgba(0, 0, 0, 0.5);
         transform: translateX(0) !important;
     }
 

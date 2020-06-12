@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getPokemon } from '../../actions/pokemon';
@@ -9,11 +9,14 @@ import PokemonHeader from './PokemonHeader';
 import AboutPokemon from './AboutPokemon';
 import MovesAndAbilities from './MovesAndAbilities';
 import EvolutionCycle from './EvolutionCycle';
+import LikeDislike from './LikeDislike';
 
 const Pokemon = ({ match, getPokemon, pokemon: { loading, pokemon, error }, history }) => {
     useEffect(() => {
         getPokemon(match.params.name.toLowerCase());
     }, [getPokemon, match.params.name]);
+
+    const [liked, setLiked] = useState(false);
 
     return (
         <div className='container'>
@@ -23,20 +26,23 @@ const Pokemon = ({ match, getPokemon, pokemon: { loading, pokemon, error }, hist
                 <Loader />
             ) : (
                 <div className='container__pokemon'>
-                    <button
-                        className={`buttons__button buttons__button--explore`}
-                        onClick={() => {
-                            history.push('/pokemons');
-                        }}>
-                        <svg
-                            width='16'
-                            height='16'
-                            viewBox='0 0 16 16'
-                            fill='none'
-                            xmlns='http://www.w3.org/2000/svg'>
-                            <path d='M15.84 5.92V9.92H6.84L10.34 13.42L7.92 15.84L0 7.92L7.92 0L10.34 2.42L6.84 5.92H15.84Z' />
-                        </svg>
-                    </button>
+                    <div className='container__pokemon__bar'>
+                        <button
+                            className={`buttons__button buttons__button--explore`}
+                            onClick={() => {
+                                history.push('/pokemons');
+                            }}>
+                            <svg
+                                width='16'
+                                height='16'
+                                viewBox='0 0 16 16'
+                                fill='none'
+                                xmlns='http://www.w3.org/2000/svg'>
+                                <path d='M15.84 5.92V9.92H6.84L10.34 13.42L7.92 15.84L0 7.92L7.92 0L10.34 2.42L6.84 5.92H15.84Z' />
+                            </svg>
+                        </button>
+                        <LikeDislike liked={liked} setLiked={setLiked} id={pokemon.data.id} />
+                    </div>
                     <div className='pokemon-info'>
                         <PokemonHeader pokemon={pokemon} />
                         <AboutPokemon pokemon={pokemon} />
