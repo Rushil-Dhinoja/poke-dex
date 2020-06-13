@@ -10,7 +10,7 @@ A detailed website about pokemons, it is powered using the [PokeAPI](https://pok
 
 -   ReactJS
 -   Redux
--   React Thunk
+-   Redux Thunk
 -   React Router
 -   SCSS
 
@@ -23,8 +23,8 @@ A detailed website about pokemons, it is powered using the [PokeAPI](https://pok
 #### To set up the copy of the project in your local environment.
 
 Clone the repository and run.
-  
- npm install
+
+npm install
 npm run start
 
 The app will be started on the **localhost:3000**.
