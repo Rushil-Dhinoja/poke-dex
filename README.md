@@ -24,8 +24,8 @@ A detailed website about pokemons, it is powered using the [PokeAPI](https://pok
 
 Clone the repository and run.
 
-npm install
-npm run start
+    npm install
+    npm run start
 
 The app will be started on the **localhost:3000**.
 
