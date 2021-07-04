@@ -1,8 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SvgSelector from './SvgSelector';
-import ProgressBar from './PrgoressBar';
-import pokeball from '../../img/pokeball.png';
+/** @format */
+
+import React from "react";
+import PropTypes from "prop-types";
+import SvgSelector from "./SvgSelector";
+import ProgressBar from "./PrgoressBar";
+import pokeball from "../../img/pokeball.png";
 const PokemonHeader = ({ pokemon: { data, species } }) => {
 	return (
 		<div className='pokemon-info__header'>
@@ -13,7 +15,9 @@ const PokemonHeader = ({ pokemon: { data, species } }) => {
 						return (
 							<div
 								key={index}
-								className={`pokemon-info__header__summary__types__type type-${type.type.name}`}>
+								className={`pokemon-info__header__summary__types__type type-${type.type.name}`}
+							>
+								<SvgSelector type={type.type.name} />
 								<p>{type.type.name}</p>
 							</div>
 						);
@@ -22,11 +26,11 @@ const PokemonHeader = ({ pokemon: { data, species } }) => {
 				<div className='pokemon-info__header__summary__base'>
 					<div className='pokemon-info__header__summary__base__stat'>
 						<p className='pokemon-info__header__summary__base__stat-xp'>
-							{' '}
+							{" "}
 							<span>XP</span> {data.base_experience}
 						</p>
 						<p className='pokemon-info__header__summary__base__stat-happiness'>
-							{' '}
+							{" "}
 							<span>Happiness</span>
 							{species.base_happiness}
 						</p>
@@ -35,12 +39,12 @@ const PokemonHeader = ({ pokemon: { data, species } }) => {
 						<p className='pokemon-info__header__summary__base__volume-height'>
 							<span>Height</span>
 							{data.height * 10} cm
-						</p>{' '}
+						</p>{" "}
 						<p className='pokemon-info__header__summary__base__volume-weight'>
-							{' '}
+							{" "}
 							<span>Weight</span>
 							{data.weight / 10} kg
-						</p>{' '}
+						</p>{" "}
 						{/* Weight/10 = weight in kg*/}
 					</div>
 				</div>
@@ -55,16 +59,27 @@ const PokemonHeader = ({ pokemon: { data, species } }) => {
 				{data.sprites.back_default ? (
 					<img src={data.sprites.back_default} alt='' />
 				) : (
-					''
+					""
 				)}
 			</div>
-			<div className='pokemon-info__header__stats'></div>
+			<div className='pokemon-info__header__stats'>
+				{data.stats.map((stat, index) => {
+					return (
+						<ProgressBar
+							key={index}
+							name={stat.stat.name}
+							value={stat.base_stat}
+							color={data.types[0].type.name}
+						/>
+					);
+				})}
+			</div>
 		</div>
 	);
 };
 
 PokemonHeader.propTypes = {
-	pokemon: PropTypes.object.isRequired,
+	pokemon: PropTypes.object.isRequired
 };
 
 export default PokemonHeader;

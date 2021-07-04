@@ -1,3 +1,5 @@
-export default function (state = '1.1', action) {
-    return state;
+/** @format */
+
+export default function (state = "2.0", action) {
+	return state;
 }

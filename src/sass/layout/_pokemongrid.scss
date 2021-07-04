@@ -1,104 +1,184 @@
+/** @format */
+
+.pokemon__grid,
+.moves__grid {
+	padding: 3rem;
+	font-size: 2rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+	z-index: -1;
+
+	@include respond(large) {
+		padding: 1rem;
+		gap: 2rem;
+	}
+
+	@include respond(medium) {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 3rem;
+		gap: 2rem;
+	}
+
+	@include respond(small) {
+		padding: 1rem;
+		gap: 2rem 1.5rem;
+	}
+	@include respond(smaller) {
+		grid-template-columns: 1fr;
+		padding: 2rem;
+		gap: 2rem;
+	}
+}
 .pokemon__grid {
-    padding: 3rem;
-    font-size: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    z-index: -1;
+	&__cell {
+		border-radius: 20px;
+		font-size: 2rem;
+		box-shadow: 0 5px 10px rgba($black, $alpha: 0.3);
+		transition: all 0.2s;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		box-sizing: border-box;
+		padding-right: 2rem;
 
-    @include respond(large) {
-        padding: 1rem;
-        gap: 2rem;
-    }
+		&:hover {
+			transform: scale(1.05);
+		}
 
-    @include respond(medium) {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 3rem;
-        gap: 2rem;
-    }
+		&__link {
+			font-family: "open-sans", "sans-serif";
+			font-weight: 600;
+			display: flex;
+			padding: 1rem;
+			align-items: center;
+			text-decoration: none;
+			color: $white;
+			z-index: -1;
 
-    @include respond(small) {
-        padding: 1rem;
-        gap: 2rem 1.5rem;
-    }
-    @include respond(smaller) {
-        grid-template-columns: 1fr;
-        padding: 2rem;
-        gap: 2rem;
-    }
+			@include respond(micro) {
+				padding: 0;
+			}
 
-    &__cell {
-        border-radius: 20px;
-        font-size: 2rem;
-        box-shadow: 0 5px 10px rgba($black, $alpha: 0.3);
-        transition: all 0.2s;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-sizing: border-box;
-        padding-right: 2rem;
+			&__img {
+				height: 96px;
+				width: 96px;
 
-        &:hover {
-            transform: scale(1.05);
-        }
+				@include respond(larger) {
+					height: 80px;
+					width: 80px;
+				}
+				@include respond(small) {
+					height: 60px;
+					width: 60px;
+				}
+				@include respond(smaller) {
+					height: 80px;
+					width: 80px;
+				}
+				@include respond(micro) {
+					height: 70px;
+					width: 70px;
+				}
+			}
 
-        &__link {
-            font-family: 'open-sans', 'sans-serif';
-            font-weight: 600;
-            display: flex;
-            padding: 1rem;
-            align-items: center;
-            text-decoration: none;
-            color: $white;
-            z-index: -1;
+			&__name {
+				font-size: 2.5rem;
+				letter-spacing: 10%;
+				text-transform: uppercase;
 
-            @include respond(micro) {
-                padding: 0;
-            }
+				@include respond(medium) {
+					font-size: 2.5rem;
+					margin-left: 10px;
+				}
+				@include respond(medium) {
+					font-size: 2.2rem;
+				}
+				@include respond(smaller) {
+					font-size: 2.5rem;
+					margin-left: 10px;
+				}
+			}
+		}
+		// svg {
+		//     margin-right: 2rem;
+		// }
+	}
+}
 
-            &__img {
-                height: 96px;
-                width: 96px;
+.moves__grid {
+	&__cell {
+		padding: 1rem;
+		border-radius: 10px;
+		&-header {
+			display: flex;
+			justify-content: space-between;
+			p {
+				text-transform: capitalize;
+				color: $white;
+				font-weight: 600;
+				font-family: "open-sans", "sans-serif";
+				font-size: 2.5rem;
+				letter-spacing: 10%;
+			}
+			.svg-icon {
+				transition: all 1s;
+				position: relative;
+				&:hover::before {
+					opacity: 1;
+				}
+				&::before {
+					content: attr(data-type);
+					background-color: rgba(#555, 0.75);
+					padding: 0.5rem;
+					position: absolute;
+					border-radius: 5px;
+					opacity: 0;
+					left: -10px;
+					top: -25px;
+					text-align: right;
+					color: $white;
+					text-transform: capitalize;
+					font-family: "open-sans", "sans-serif";
+					font-size: 1rem;
+				}
+				svg {
+					height: 20px;
+					width: 20px;
+					padding: 0.5rem;
+					cursor: pointer;
+					@include respond(medium) {
+						height: 15px;
+						width: 15px;
+					}
+				}
+			}
+		}
+		&-stats {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			padding: 0 2rem;
+			& > div {
+				margin: 1rem 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				font-family: "open-sans", "sans-serif";
+				color: $white;
+			}
+		}
 
-                @include respond(larger) {
-                    height: 80px;
-                    width: 80px;
-                }
-                @include respond(small) {
-                    height: 60px;
-                    width: 60px;
-                }
-                @include respond(smaller) {
-                    height: 80px;
-                    width: 80px;
-                }
-                @include respond(micro) {
-                    height: 70px;
-                    width: 70px;
-                }
-            }
-
-            &__name {
-                font-size: 2.5rem;
-                letter-spacing: 10%;
-                text-transform: uppercase;
-
-                @include respond(medium) {
-                    font-size: 2.5rem;
-                    margin-left: 10px;
-                }
-                @include respond(medium) {
-                    font-size: 2.2rem;
-                }
-                @include respond(smaller) {
-                    font-size: 2.5rem;
-                    margin-left: 10px;
-                }
-            }
-        }
-        // svg {
-        //     margin-right: 2rem;
-        // }
-    }
+		&-gen {
+			display: flex;
+			justify-content: center;
+			p {
+				color: $white;
+				font-size: 2rem;
+				text-transform: uppercase;
+				font-family: "open-sans", "sans-serif";
+				font-weight: 600;
+			}
+		}
+	}
 }
