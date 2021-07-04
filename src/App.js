@@ -27,6 +27,7 @@ function App() {
 	}, []);
 
 	const [current, setCurrent] = useState(1);
+	const [movesCurrent, setMovesCurrent] = useState(1);
 	const [sideDrawer, setSideDrawer] = useState(false);
 
 	return (
@@ -51,7 +52,13 @@ function App() {
 							)}
 						/>
 						<Route exact path='/pokemons/:name' component={Pokemon} />
-						<Route exact path='/moves' component={Moves} />
+						<Route
+							exact
+							path='/moves'
+							component={() => (
+								<Moves current={movesCurrent} setCurrent={setMovesCurrent} />
+							)}
+						/>
 						<Route exact path='/liked' component={Favorite} />
 					</Switch>
 				</Fragment>

@@ -1,12 +1,17 @@
 /** @format */
 
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
 import { connect } from "react-redux";
 import { getMoves } from "../../actions/moves";
 import Loader from "../layout/Loader";
 import Buttons from "../pokemons/Buttons";
 import MovesGrid from "./MovesGrid";
-const Moves = ({ getMoves, moves: { prev, next, moves, loading, count } }) => {
+const Moves = ({
+	getMoves,
+	moves: { prev, next, moves, loading, count },
+	current,
+	setCurrent
+}) => {
 	useEffect(() => {
 		console.log("outMoves");
 		if (moves === null) {
@@ -15,7 +20,6 @@ const Moves = ({ getMoves, moves: { prev, next, moves, loading, count } }) => {
 		}
 	}, [getMoves, moves]);
 
-	const [current, setCurrent] = useState(1);
 	return (
 		<div className='container'>
 			{loading || moves === null ? (

@@ -2,17 +2,15 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Fade from "react-reveal/Fade";
 
 const MovesAndAbilities = ({ pokemon: { data } }) => {
 	const [defaultMovesCount, setDefaultMovesCount] = useState(11);
 
-	const setMoves = type => {
+	const setMoves = function (type) {
 		type === 0
 			? setDefaultMovesCount(data.moves.length)
 			: setDefaultMovesCount(11);
 	};
-
 	return (
 		<div className='moves-and-abilities'>
 			<div className='moves-and-abilities__abilities'>
@@ -30,6 +28,8 @@ const MovesAndAbilities = ({ pokemon: { data } }) => {
 					{data.moves.map((move, index) => {
 						if (index <= defaultMovesCount) {
 							return <p key={index}>{move.move.name}</p>;
+						} else {
+							return null;
 						}
 					})}
 				</div>

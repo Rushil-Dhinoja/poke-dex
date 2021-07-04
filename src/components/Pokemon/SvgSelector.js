@@ -390,7 +390,7 @@ const SvgSelector = ({ type }) => {
 
 	return (
 		<Fragment>
-			<div class='svg-icon' data-type={type}>
+			<div className='svg-icon' data-type={type}>
 				{code}
 			</div>
 		</Fragment>
