@@ -2,7 +2,7 @@
   background: $color;
 }
 
-// Test Build on jenkins
+// Test Build on jenkins 2
 
 @mixin respond($breakpoint) {
   @if $breakpoint == micro {
