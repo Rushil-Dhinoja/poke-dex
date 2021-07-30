@@ -5,7 +5,7 @@ import { getLiked } from '../../actions/liked';
 import { connect } from 'react-redux';
 import Loader from '../layout/Loader';
 import PokemonItem from '../pokemons/PokemonItem';
-// Test
+// Test 123
 const Favorite = ({ history, getLiked, liked: { liked, loading } }) => {
   const [exists, setExists] = useState(false);
 
