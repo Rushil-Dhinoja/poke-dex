@@ -41,7 +41,7 @@ function App() {
           />
           {sideDrawer ? <Backdrop /> : ""}
           <SidebarWrapper />
-          {/* <SearchBar /> */}
+          <SearchBar />
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route
