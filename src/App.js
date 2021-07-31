@@ -20,51 +20,51 @@ import Moves from "./components/Moves/Moves";
 // Redux - import
 
 function App() {
-	useEffect(() => {
-		if (!localStorage.getItem("liked")) {
-			return localStorage.setItem("liked", JSON.stringify([]));
-		}
-	}, []);
+  useEffect(() => {
+    if (!localStorage.getItem("liked")) {
+      return localStorage.setItem("liked", JSON.stringify([]));
+    }
+  }, []);
 
-	const [current, setCurrent] = useState(1);
-	const [movesCurrent, setMovesCurrent] = useState(1);
-	const [sideDrawer, setSideDrawer] = useState(false);
+  const [current, setCurrent] = useState(1);
+  const [movesCurrent, setMovesCurrent] = useState(1);
+  const [sideDrawer, setSideDrawer] = useState(false);
 
-	return (
-		<Provider store={store}>
-			<Router>
-				<Fragment>
-					<Navbar setSideDrawer={setSideDrawer} />
-					<SidebarDrawer
-						sideDrawer={sideDrawer}
-						setSideDrawer={setSideDrawer}
-					/>
-					{sideDrawer ? <Backdrop /> : ""}
-					<SidebarWrapper />
-					<SearchBar />
-					<Switch>
-						<Route exact path='/' component={Landing} />
-						<Route
-							exact
-							path='/pokemons'
-							component={() => (
-								<Pokemons current={current} setCurrent={setCurrent} />
-							)}
-						/>
-						<Route exact path='/pokemons/:name' component={Pokemon} />
-						<Route
-							exact
-							path='/moves'
-							component={() => (
-								<Moves current={movesCurrent} setCurrent={setMovesCurrent} />
-							)}
-						/>
-						<Route exact path='/liked' component={Favorite} />
-					</Switch>
-				</Fragment>
-			</Router>
-		</Provider>
-	);
+  return (
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+          <Navbar setSideDrawer={setSideDrawer} />
+          <SidebarDrawer
+            sideDrawer={sideDrawer}
+            setSideDrawer={setSideDrawer}
+          />
+          {sideDrawer ? <Backdrop /> : ""}
+          <SidebarWrapper />
+          {/* <SearchBar /> */}
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route
+              exact
+              path="/pokemons"
+              component={() => (
+                <Pokemons current={current} setCurrent={setCurrent} />
+              )}
+            />
+            <Route exact path="/pokemons/:name" component={Pokemon} />
+            <Route
+              exact
+              path="/moves"
+              component={() => (
+                <Moves current={movesCurrent} setCurrent={setMovesCurrent} />
+              )}
+            />
+            <Route exact path="/liked" component={Favorite} />
+          </Switch>
+        </Fragment>
+      </Router>
+    </Provider>
+  );
 }
 
 export default App;
