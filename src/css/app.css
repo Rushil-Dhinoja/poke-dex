@@ -535,10 +535,11 @@ body {
     .buttons__button--explore {
       background-color: #ff6d73; }
     .buttons__button--prev-notvisible, .buttons__button--next-notvisible {
-      opacity: 0; }
+      opacity: 0;
+      cursor: default; }
   .buttons__page-container {
     align-self: center;
-    font-family: 'roboto', 'sans-serif';
+    font-family: "roboto", "sans-serif";
     font-weight: 700; }
     .buttons__page-container__divider {
       color: #37474f;
