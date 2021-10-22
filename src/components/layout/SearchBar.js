@@ -75,8 +75,9 @@ const SearchBar = ({ history }) => {
               className="searchbar__suggestion__item"
               key={index}
               onClick={() => {
-                setSearchValue(option);
                 searchRef.current.focus();
+                history.push(`/pokemons/${option.toLowerCase()}`);
+                setSearchValue("");
               }}
             >
               {option}

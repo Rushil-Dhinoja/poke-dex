@@ -1,74 +1,75 @@
 .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 3rem;
 
-    &__button {
-        border-radius: 50%;
-        padding: 3rem;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        width: 60px;
-        height: 60px;
-        position: relative;
-        transition: all 0.2s;
+  &__button {
+    border-radius: 50%;
+    padding: 3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    transition: all 0.2s;
 
-        @include respond(small) {
-            height: 10px;
-            width: 10px;
-            padding: 2rem;
-        }
-
-        &:hover {
-            transform: translateY(-2px) scale(0.9);
-        }
-
-        svg {
-            width: 25px;
-            height: 25px;
-            fill: $white;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            @include respond(small) {
-                height: 10px;
-                width: 10px;
-            }
-        }
-
-        &--prev,
-        &--next {
-            background-color: $font-color;
-        }
-
-        &--explore {
-            background-color: $complement-color-1;
-        }
-
-        &--prev-notvisible,
-        &--next-notvisible {
-            opacity: 0;
-        }
+    @include respond(small) {
+      height: 10px;
+      width: 10px;
+      padding: 2rem;
     }
 
-    &__page-container {
-        align-self: center;
-        font-family: 'roboto', 'sans-serif';
-        font-weight: 700;
-
-        &__divider {
-            color: $font-color;
-            font-size: 2rem;
-
-            &__current {
-                font-weight: 400;
-            }
-            &__total {
-                color: $complement-color-1;
-            }
-        }
+    &:hover {
+      transform: translateY(-2px) scale(0.9);
     }
+
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include respond(small) {
+        height: 10px;
+        width: 10px;
+      }
+    }
+
+    &--prev,
+    &--next {
+      background-color: $font-color;
+    }
+
+    &--explore {
+      background-color: $complement-color-1;
+    }
+
+    &--prev-notvisible,
+    &--next-notvisible {
+      opacity: 0;
+      cursor: default;
+    }
+  }
+
+  &__page-container {
+    align-self: center;
+    font-family: "roboto", "sans-serif";
+    font-weight: 700;
+
+    &__divider {
+      color: $font-color;
+      font-size: 2rem;
+
+      &__current {
+        font-weight: 400;
+      }
+      &__total {
+        color: $complement-color-1;
+      }
+    }
+  }
 }
